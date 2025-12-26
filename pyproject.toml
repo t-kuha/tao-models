@@ -4,4 +4,30 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "ruff>=0.14.10",
+    "tensorflow==2.19.1",
+    "tf2onnx>=1.16.1",
+]
+
+[tool.ruff.lint]
+# Flake8-ish coverage + isort
+select = [
+  "E",   # pycodestyle errors
+  "W",   # pycodestyle warnings
+  "F",   # pyflakes
+  "I",   # isort (import sorting)
+  "B",   # flake8-bugbear (common in flake8 setups)
+  "UP",  # pyupgrade (often paired with flake8)
+]
+
+# Common flake8 ignores (these are the ones people most often had)
+ignore = [
+  "E501", # Line too long
+]
+
+[tool.ruff.lint.isort]
+# isort-like knobs (set only what you actually used in isort)
+combine-as-imports = true
+force-sort-within-sections = true
+known-first-party = ["your_package_name"]
