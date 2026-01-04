@@ -1,7 +1,10 @@
+*.h5
 *.hdf5
-*.hdf5
+*.keras
 *.onnx
 *.pt
 *.pth
 
 .venv
+
+.DS_Store
