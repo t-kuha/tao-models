@@ -27,7 +27,8 @@ def main():
         # print(output)
         print(torch.argmax(output, dim=1))
 
-    torch.save(backbone.state_dict(), output_path)
+    # torch.save(backbone.state_dict(), output_path)
+    torch.save(backbone, output_path)
 
     print(f'[INFO] Saved PyTorch state_dict to: {output_path}')
 
